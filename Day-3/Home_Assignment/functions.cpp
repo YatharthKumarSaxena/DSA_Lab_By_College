@@ -478,7 +478,7 @@ int BST<Type>::depthOfNode(TreeNode<Type>* temp){
 }
 
 template <class Type>
-void BST<Type>::nthLevelOrderTraversal(TreeNode<Type>* root,int level,int curr = 0){
+void BST<Type>::nthLevelOrderTraversal(TreeNode<Type>* root,int level,int curr){
     if(!root){
         return;
     }
