@@ -2,7 +2,7 @@
 
 void displayMenu(){
     cout<<"\n-----------------MAIN MENU-----------------\n";
-    cout<<"\n1.To insert Node\n";
+    cout<<"\n1. To insert Node\n";
     cout<<"2. To display preOrder Traversal\n";
     cout<<"3. To display inOrder Traversal\n";
     cout<<"4. To display postOrder Traversal\n";
@@ -18,6 +18,7 @@ bool checkEquivalentTree(TreeNode<Type>* root1,TreeNode<Type>* root2){
 }
 
 int main(){
+    cout<<"\nWelcome to the world of programming\n\n";
     int n;
     BinaryTree<int> BT1;
     cout<<"Please enter the value of root node for First Binary Tree :- ";
@@ -25,9 +26,11 @@ int main(){
     BT1.createRoot(n);
     TreeNode<int>* root1 = BT1.returnRoot();
     while(true){
+        displayMenu();
         int choice;
-        cout<<"Please enter your choice :- ";
+        cout<<"\nPlease enter your choice :- ";
         cin>>choice;
+        cout<<endl;
         if(choice == 1){
             int val;
             cout<<"Please enter the value you want to insert :- ";
@@ -67,6 +70,7 @@ int main(){
     BT2.createRoot(a);
     TreeNode<int>* root2 = BT2.returnRoot();
     while(true){
+        displayMenu();
         int choice;
         cout<<"Please enter your choice :- ";
         cin>>choice;
