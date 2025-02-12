@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 template <class Type>
 class TreeNode{
 public:
@@ -25,8 +28,8 @@ public:
     // Member Function
     void createRoot(Type val);
     void insertNode(Type val,string loc);
-    void preOrder();
-    void inOrder();
-    void postOrder();
+    void preOrder(TreeNode<Type>* root);
+    void inOrder(TreeNode<Type>* root);
+    void postOrder(TreeNode<Type>* root);
     TreeNode<Type>* returnRoot();
 };
