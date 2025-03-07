@@ -1,0 +1,3 @@
+I will read this file by getline function of instream object
+I am not reading this file by Character to Character
+I am reading this file line by line

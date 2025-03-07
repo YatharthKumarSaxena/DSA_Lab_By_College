@@ -1,0 +1,2 @@
+Your Array Looks as given below :- // This File is Created By Practice.cpp Code
+{1,2,3,4,5}
