@@ -22,8 +22,14 @@ public:
             }
         }
     }
+    ~Graph() {
+        for(int i = 0; i < rows; ++i)
+            delete[] arr[i];
+        delete[] arr;
+    }
     void displayGraph();
     void makeGraph();
+    bool checkPathUtil(int src, int des, bool visited[]);
     bool checkPath(int src,int des);
 };
 
@@ -75,10 +81,26 @@ void Graph::displayGraph(){
     cout<<endl;
 }
 
-bool Graph::checkPath(int src,int des){
-    if(src<0 || src>=rows || des<0 || des>=columns)return false;
-    else if(arr[src][des] == 1)return true;
-    return (checkPath(src+1,des)||checkPath(src-1,des)||checkPath(src,des-1)||checkPath(src,des+1));
+bool Graph::checkPathUtil(int src, int des, bool visited[]) {
+    if (src == des) return true;
+    visited[src] = true;
+
+    for (int i = 0; i < columns; ++i) {
+        if (arr[src][i] == 1 && !visited[i]) {
+            if (checkPathUtil(i, des, visited)) return true;
+        }
+    }
+    return false;
+}
+
+bool Graph::checkPath(int src, int des) {
+    if (src < 0 || src >= rows || des < 0 || des >= columns) return false;
+    bool visited[rows];
+    for(int i=0;i<rows;i++){
+        visited[i] = false;
+    }
+    bool result = checkPathUtil(src, des, visited);
+    return result;
 }
 
 int main(){
