@@ -61,6 +61,7 @@ int kruskal(Edge* edge,int edges,int vertices){
 
 int main(){
     cout<<"Welcome to the World of Programming\n";
+    cout<<"This Program is dedicated to explore Kruskal Algorithm using Disjoint Set Union\n";
     ifstream in;
     in.open("read.txt");
     char c;

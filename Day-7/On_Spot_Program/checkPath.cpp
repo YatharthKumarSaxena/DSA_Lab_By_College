@@ -95,7 +95,7 @@ bool Graph::checkPathUtil(int src, int des, bool visited[]) {
 
 bool Graph::checkPath(int src, int des) {
     if (src < 0 || src >= rows || des < 0 || des >= columns) return false;
-    bool visited[rows];
+    bool* visited = new bool[rows];
     for(int i=0;i<rows;i++){
         visited[i] = false;
     }
